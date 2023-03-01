@@ -4,7 +4,7 @@ function Paddle() {
     this.w = 140;
     this.h = 20;
     this.x = width/2;
-    this.y = height/2 - this.h/2;
+    this.y = height-100;
 
     this.show = function(){
         fill(0,255,0)
