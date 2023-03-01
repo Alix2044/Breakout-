@@ -7,6 +7,7 @@ function Brick() {
         fill(0,255,0)
         rect(this.x,this.y,this.w,this.h);
         }
+
     this.collision = function(b){
         if(this.active == true){
             var ballLeft = b.x - b.r;
@@ -16,17 +17,17 @@ function Brick() {
             
             if(!(ballLeft > this.x + this.w
                 ||ballRight < this.x
-                ||ballTop > this.y + this.h
+                ||ballTop > this.y
                 ||ballBottom < this.y)){
-                b.vy = -b.vy
-                this.active = false;     
+                    b.vy = -b.vy
+                    this.active = false;     
             }
             if(!(ballLeft > this.x + this.w
                 ||ballRight < this.x 
                 ||ballTop > this.y + this.h 
                 ||ballBottom < this.y + this.h)){
-                b.vy = -b.vy
-                this.active = false;  
+                    b.vy = -b.vy
+                    this.active = false;  
             }
             if(!(ballLeft > this.x
                 ||ballRight < this.x
