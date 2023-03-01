@@ -1,15 +1,18 @@
-function Ball(){
-    this.x = width/2;
-    this.y = height/2;
-    this.r = 15;
-    this.vy = random(-10, 10);
-    this.vx = random(-10, 10);
+class Ball{
+    constructor(){
+        this.x = width/2;
+        this.y = height/2;
+        this.r = 15;
+        this.vy = 10;
+        this.vx = random(-10,10);
+    }
+   
     
-    this.move = function(){
+    move(){
         this.x += this.vx;
         this.y += this.vy;
 
-        if(this.y - this.r < 0){
+      if(this.y - this.r >height){
             this.vy = -this.vy;
         } 
 
@@ -17,12 +20,13 @@ function Ball(){
             this.vx = -this.vx;
         } 
 
+
     }
-    this.show = function(){
+    show(){
         fill(0,255,0)
         circle(this.x, this.y, this.r)
     }
-    this.reset = function(){
+    reset(){
         this.x = width/2;
         this.y = height/2;
         this.vy = random(-10, 10);
