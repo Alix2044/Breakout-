@@ -1,8 +1,9 @@
 function Brick() {
-    this.w = 20;
-    this.h = 140;
+    this.w = 80;
+    this.h = 40;
     this.x = width/2;
     this.y = height/2 - this.h/2;
+    this.active = true;
     this.show = function(){
         fill(0,255,0)
         rect(this.x,this.y,this.w,this.h);

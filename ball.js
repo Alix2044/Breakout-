@@ -5,13 +5,21 @@ function Ball(){
     this.vy = random(-10, 10);
     this.vx = random(-10, 10);
     
-    this.show = function(){
+    this.move = function(){
         this.x += this.vx;
         this.y += this.vy;
 
-        if(this.y - this.r < 0) this.vy = -this.vy;
-        if(this.x + this.r > width || this.x - this.r < 0) this.vx = -this.vx;
+        if(this.y - this.r < 0){
+            this.vy = -this.vy;
+        } 
 
+        if(this.x + this.r > width || this.x - this.r < 0){
+            this.vx = -this.vx;
+        } 
+
+    }
+    this.show = function(){
+        circle(this.x, this.y, this.r)
     }
     this.reset = function(){
         this.x = width/2;
