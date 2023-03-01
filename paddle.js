@@ -1,8 +1,8 @@
 
 
 function Paddle() {
-    this.w = 20;
-    this.h = 140;
+    this.w = 140;
+    this.h = 20;
     this.x = width/2;
     this.y = height/2 - this.h/2;
 

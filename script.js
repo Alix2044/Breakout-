@@ -11,9 +11,9 @@ var score = 0;
 var play = true;
 
 function setup(){
-    // When website starts
-    width = 1000;
-    height = 800;
+    
+    width = 800;
+    height = 400;
     createCanvas(width, height);
     
     ball = new Ball();
@@ -23,17 +23,18 @@ function setup(){
   }
   
   function draw(){
-    // Runs in a loop
-    background(0);
-    circle(x, y, r*2);
+
+    background(255,255,255);
+   
    
     fill(0);
     textSize(20);
     text(score,20,50)
+  
 
     if(play == true){
       ball.show();
-      // ball.move()
+      ball.move()
       paddle.show();
       paddle.collison(ball);
       paddle.x = mouseX;
@@ -42,6 +43,13 @@ function setup(){
       if(paddle.x < 0) paddle.x = 0
       if(paddle.x + paddle.width > width) paddle.x = width - paddle.width
       if(ball.y - ball.r > height) play = false
+
+    }
+    else 
+    {
+
+      textSize(20);
+      text("GAME OVER!!!",width/2,height/2)
 
     }
 
