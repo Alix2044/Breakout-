@@ -36,29 +36,33 @@ function setup(){
 
     ball.show()
     ball.move()
+
+    ball1.show();
+    ball1.move()
  
-
-   if(play == true){
+  /*  if(play == true){
       ball.show();
-      ball.move();
-      paddle.show();
-      paddle.collison(ball);
-      paddle.x = mouseX;
-      brick.show();
-      brick.collision(ball);
-      if(paddle.x < 0) paddle.x = 0
-      if(paddle.x + paddle.width > width) paddle.x = width - paddle.width
-      if(ball.y - ball.r > height) play = false
-
-    }
-    else 
-    {
-
-      textSize(20);
-      text("GAME OVER!!!",width/2,height/2);
-      ball.reset();
-
-    }
+       ball.move();
+       paddle.show();
+       paddle.collison(ball);
+       paddle.x = mouseX;
+       brick.show();
+       brick.collision(ball);
+       if(paddle.x < 0) paddle.x = 0
+       if(paddle.x + paddle.width > width) paddle.x = width - paddle.width
+       if(ball.y - ball.r > height) play = false
+ 
+     }
+     else 
+     {
+ 
+       textSize(20);
+       text("GAME OVER!!!",width/2,height/2);
+       ball.reset();
+ 
+     }
+     */
+ 
     
 
     
