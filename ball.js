@@ -19,6 +19,7 @@ function Ball(){
 
     }
     this.show = function(){
+        fill(0,255,0)
         circle(this.x, this.y, this.r)
     }
     this.reset = function(){

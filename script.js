@@ -12,8 +12,8 @@ var play = true;
 
 function setup(){
     
-    width = 1000;
-    height = 800;
+    width = 800;
+    height = 400;
     createCanvas(width, height);
     
     ball = new Ball();
@@ -24,14 +24,13 @@ function setup(){
   
   function draw(){
 
-    background(0);
-    circle(x, y, r*2);
+    background(255,255,255);
+   
    
     fill(0);
     textSize(20);
     text(score,20,50)
-
-
+  
 
     if(play == true){
       ball.show();
@@ -48,6 +47,7 @@ function setup(){
     }
     else 
     {
+
       textSize(20);
       text("GAME OVER!!!",width/2,height/2)
 
