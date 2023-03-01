@@ -19,7 +19,7 @@ function Brick() {
             if(!(ballLeft > this.x + this.w
                 ||ballRight < this.x
                 ||ballTop > this.y
-                ||ballBottom < this.y)){
+                ||ballBottom < this.y + this.h)){
                     b.vy = -b.vy
                     this.active = false;     
             }
