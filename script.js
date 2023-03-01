@@ -8,7 +8,7 @@ var paddle;
 var brick;
 
 var score = 0;
-var play = false;
+var play = true;
 
 function setup(){
     // When website starts
@@ -16,14 +16,25 @@ function setup(){
     height = 400;
     createCanvas(width, height);
     
+    ball = new Ball();
+    paddle = new Paddle();
+    brick = new Brick()
 
   }
   
   function draw(){
     // Runs in a loop
     background(0);
-    circle(x, y, r*2)
+    circle(x, y, r*2);
    
+    fill(0);
+    textSize(20);
+    text(score,20,50)
+
+    if(play == true){
+      ball.show()
+      
+    }
 
     
 
