@@ -12,8 +12,8 @@ var play = true;
 
 function setup(){
     // When website starts
-    width = 400;
-    height = 400;
+    width = 1000;
+    height = 800;
     createCanvas(width, height);
     
     ball = new Ball();
@@ -32,8 +32,17 @@ function setup(){
     text(score,20,50)
 
     if(play == true){
-      ball.show()
-      
+      ball.show();
+      // ball.move()
+      paddle.show();
+      paddle.collison(ball);
+      paddle.x = mouseX;
+      brick.show();
+      brick.collision(ball);
+      if(paddle.x < 0) paddle.x = 0
+      if(paddle.x + paddle.width > width) paddle.x = width - paddle.width
+      if(ball.y - ball.r > height) play = false
+
     }
 
     
