@@ -1,16 +1,17 @@
 
 
-function Paddle() {
+class Paddle {
+    constructor(){
     this.w = 140;
     this.h = 20;
     this.x = width/2;
     this.y = height-100;
-
-    this.show = function(){
+    }
+    show(){
         fill(0,255,0)
         rect(this.x,this.y,this.w,this.h);
     }
-    this.collision = function(b){
+    collision(b){
         var ballLeft = b.x - b.r;
         var ballRight = b.x + b.r;
         var ballTop = b.y - b.r;
