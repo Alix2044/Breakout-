@@ -18,13 +18,13 @@ class Ball{
         this.x += this.vx;
         this.y += this.vy;
 
-    if(this.y - this.r >height || this.y+this.r<=0){
+    if(this.y  >height || this.y<0){
             this.vy = -this.vy;
         } 
  
        
 
-        if(this.x - this.r > width || this.x - this.r < 0){
+        if(this.x > width || this.x - this.r < 0){
             this.vx = -this.vx;
         } 
           

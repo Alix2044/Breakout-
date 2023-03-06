@@ -8,7 +8,7 @@ class Paddle {
     this.y = height-100;
     }
     show(){
-        fill(0,255,0)
+        fill(0,255,20)
         rect(this.x,this.y,this.w,this.h);
     }
     collision(b){

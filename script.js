@@ -18,37 +18,34 @@ function setup(){
     
     ball = new Ball();
     paddle = new Paddle();
-    brick = new Brick()
+    brick = new Brick();
 
   }
   
   function draw(){
 
-    background(255,255,255);
+    background(0);
    
    
-    fill(0);
+    fill(255,0,0);
     textSize(20);
     text(score,20,50)
-  
 
-    ball.show()
-    ball.move()
+   // ball.show()
+   // ball.move()
 
-    ball1.show();
-    ball1.move()
  
-  /*  if(play == true){
-      ball.show();
+  if(play == true){
+       ball.show();
        ball.move();
-       paddle.show();
-       paddle.collison(ball);
+      paddle.show();
+     // paddle.collison(ball);
        paddle.x = mouseX;
-       brick.show();
-       brick.collision(ball);
-       if(paddle.x < 0) paddle.x = 0
-       if(paddle.x + paddle.width > width) paddle.x = width - paddle.width
-       if(ball.y - ball.r > height) play = false
+    // brick.show();
+     // brick.collision(ball);
+       if(paddle.x < 0){ paddle.x = 0}
+       if(paddle.x + paddle.width > width){ paddle.x = width - paddle.width}
+       if(ball.y - ball.r > height){play = false}
  
      }
      else 
@@ -59,7 +56,7 @@ function setup(){
        ball.reset();
  
      }
-     */
+     
  
     
 

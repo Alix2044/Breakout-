@@ -1,15 +1,18 @@
-function Brick() {
+class Brick{
+    constructor(){
     this.w = 80;
     this.h = 40;
     this.x = width/2;
     this.y = height/2 - this.h/2;
-    this.active = true;
-    this.show = function(){
-        fill(0,255,0)
+    this.active = true;   
+    }
+  
+    show(){
+        fill(255);
         rect(this.x,this.y,this.w,this.h);
         }
 
-    this.collision = function(b){
+    collision(b){
         if(this.active == true){
             var ballLeft = b.x - b.r;
             var ballRight = b.x + b.r;
