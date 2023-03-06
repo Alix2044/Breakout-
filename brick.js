@@ -1,15 +1,12 @@
 function Brick() {
     this.w = 80;
     this.h = 40;
-    this.x = random(100,width-100);
-    this.y = random(100,height-100);
+    this.x = width/2;
+    this.y = height/2 - this.h/2;
     this.active = true;
     this.show = function(){
         fill(0,255,0)
-        if(this.active == true){
         rect(this.x,this.y,this.w,this.h);
-    
-        }
         }
 
     this.collision = function(b){

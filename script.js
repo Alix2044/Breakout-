@@ -4,7 +4,6 @@ let x = 400/2;
 let y = 400/2;
 
 var ball;
-var ball1;
 var paddle;
 var brick;
 
@@ -18,7 +17,6 @@ function setup(){
     createCanvas(width, height);
     
     ball = new Ball();
-    ball1 = new Ball()
     paddle = new Paddle();
     brick = new Brick()
 
