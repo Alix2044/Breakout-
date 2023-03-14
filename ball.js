@@ -9,16 +9,12 @@ class Ball{
     }
  
     
-    show(){
-        fill(0, 69, 0);
 
-        ellipse(this.x, this.y, this.r * 2, this.r * 2);
-    }
     move(){
         this.x += this.vx;
         this.y += this.vy;
 
-    if(this.y  >height || this.y<0){
+    if(this.y<0){
             this.vy = -this.vy;
         } 
  

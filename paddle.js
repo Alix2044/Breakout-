@@ -5,11 +5,15 @@ class Paddle {
     this.w = 140;
     this.h = 20;
     this.x = width/2;
-    this.y = height-100;
+    this.y = height-25;
     }
     show(){
         fill(0,255,20)
         rect(this.x,this.y,this.w,this.h);
+       /* if (this.x+this.w>400){
+            this.x-=this.w
+        }
+        */
     }
     collision(b){
         var ballLeft = b.x - b.r;
@@ -24,7 +28,9 @@ class Paddle {
                 b.vy = -b.vy
 
         }
+    
 
     }
+    
 
 }

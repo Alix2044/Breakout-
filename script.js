@@ -10,6 +10,8 @@ var brick;
 var score = 0;
 var play = true;
 
+let brickArray = []
+
 function setup(){
     
     width = 800;
@@ -20,6 +22,15 @@ function setup(){
     paddle = new Paddle();
     brick = new Brick();
 
+    for(let i = 0; i<10; i++){
+      brickArray.push(new Brick());
+    }
+
+
+    for(let i = 0; i<brickArray.length;i++){
+       brickArray[i].x +=100;
+      ;
+     }
   }
   
   function draw(){
@@ -37,14 +48,30 @@ function setup(){
  
   if(play == true){
        ball.show();
-       ball.move();
+     ball.move();
       paddle.show();
-     // paddle.collison(ball);
+     paddle.collision(ball);
        paddle.x = mouseX;
-    // brick.show();
-     // brick.collision(ball);
+
+    for(let i = 0; i<brickArray.length;i++){
+
+      brickArray[i].show();
+      brickArray[i].collision(ball);
+    }
+
+
+     brick.show();
+    if(brick.active == true){
+
+      brick.collision(ball);
+
+      if(!brick.active == true){
+        console.log("1232")
+        score ++;
+      }
+    }
        if(paddle.x < 0){ paddle.x = 0}
-       if(paddle.x + paddle.width > width){ paddle.x = width - paddle.width}
+       if(paddle.x+ paddle.w >= width){paddle.x = width-paddle.w}
        if(ball.y - ball.r > height){play = false}
  
      }
@@ -52,7 +79,7 @@ function setup(){
      {
  
        textSize(20);
-       text("GAME OVER!!!",width/2,height/2);
+       text("GAME OVER!!!",width/2-75,height/2);
        ball.reset();
  
      }
