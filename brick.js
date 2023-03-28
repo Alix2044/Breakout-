@@ -12,6 +12,7 @@ class Brick{
     this.g = g
     this.b = b
 
+    this.score = 0;
     }
   
     show(){
@@ -47,7 +48,7 @@ class Brick{
                 ||ballTop > this.y + this.h 
                 ||ballBottom < this.y + this.h)){
                     b.vy = -b.vy;
-                  
+                  this.score+=1;
                     return   this.active = false;  
             }
             if(!(ballLeft > this.x
@@ -55,6 +56,7 @@ class Brick{
                 ||ballTop > this.y + this.h
                 ||ballBottom < this.y)){
                     b.vx = -b.vx;
+                    score+=1;
                   return this.active = false;  
                     
             }
@@ -64,8 +66,9 @@ class Brick{
                 ||ballBottom < this.y)){
                     b.vx = -b.vx;
                   return this.active = false;  
-                
+                score+=1;
             }
+
         }
         return this.active
     }

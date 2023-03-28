@@ -7,6 +7,8 @@ var ball;
 var paddle;
 var brick;
 
+var bricki;
+
 var score = 0;
 var play = true;
 
@@ -21,15 +23,20 @@ function setup(){
     ball = new Ball();
     paddle = new Paddle();
     brick = new Brick();
+    bricki = new Bricki(200,300,10,255,20);
+    
+
+
  for(let j = 0; j<7;j++){
   for(let i = 0; i<13; i++){
       brickArray.push(new Brick(i*(width/13),j*((width/13)/4),random(255),random(255),random(255)));
 
     }
  }
-    
 
-  for(let i = 0; i<brickArray.length;i++){
+
+
+  /*for(let i = 0; i<brickArray.length;i++){
 
       
       brickArray[i].show();
@@ -37,7 +44,7 @@ function setup(){
     
     }
     
-   
+   */
 
   
   }
@@ -45,19 +52,30 @@ function setup(){
   function draw(){
 
     background(0);
+    fill(255,0,0,100);
+    textSize(255);
+    text(score,width/2-110,height-70)
    
-   
-    fill(255,0,0);
-    textSize(20);
-    text(score,20,50)
+    bricki.show()
+    bricki.collision(ball)
 
    // ball.show()
    // ball.move()
+   
    for(let i = 0; i<brickArray.length;i++){
-   brickArray[i].x;
    brickArray[i].show()
+      if(brickArray[i].active == true){
+
         brickArray[i].collision(ball);
+  
+        if(!brickArray[i].active == true){
+          console.log(score)
+          score ++;
+        }
       }
+      }
+      
+
 
 
  
@@ -68,21 +86,25 @@ function setup(){
      paddle.collision(ball);
        paddle.x = mouseX;
 
-    
 
      
 
 
      brick.show();
-    if(brick.active == true){
+     
+  /*  if(brick.active == true){
 
       brick.collision(ball);
-
+/*
       if(!brick.active == true){
-        console.log("1232")
+        console.log(score)
         score ++;
       }
+      
     }
+    */
+    
+    
        if(paddle.x < 0){ paddle.x = 0}
        if(paddle.x+ paddle.w >= width){paddle.x = width-paddle.w}
        if(ball.y - ball.r > height){play = false}
