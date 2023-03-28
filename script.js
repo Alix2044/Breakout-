@@ -21,16 +21,25 @@ function setup(){
     ball = new Ball();
     paddle = new Paddle();
     brick = new Brick();
+ for(let j = 0; j<7;j++){
+  for(let i = 0; i<13; i++){
+      brickArray.push(new Brick(i*(width/13),j*((width/13)/4),random(255),random(255),random(255)));
 
-    for(let i = 0; i<10; i++){
-      brickArray.push(new Brick());
     }
+ }
+    
 
+  for(let i = 0; i<brickArray.length;i++){
 
-    for(let i = 0; i<brickArray.length;i++){
-       brickArray[i].x +=100;
-      ;
-     }
+      
+      brickArray[i].show();
+    brickArray[i].collision(ball);
+    
+    }
+    
+   
+
+  
   }
   
   function draw(){
@@ -44,6 +53,12 @@ function setup(){
 
    // ball.show()
    // ball.move()
+   for(let i = 0; i<brickArray.length;i++){
+   brickArray[i].x;
+   brickArray[i].show()
+        brickArray[i].collision(ball);
+      }
+
 
  
   if(play == true){
@@ -53,11 +68,9 @@ function setup(){
      paddle.collision(ball);
        paddle.x = mouseX;
 
-    for(let i = 0; i<brickArray.length;i++){
+    
 
-      brickArray[i].show();
-      brickArray[i].collision(ball);
-    }
+     
 
 
      brick.show();

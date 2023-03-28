@@ -1,19 +1,27 @@
 class Brick{
-    constructor(){
-    this.w = 80;
-    this.h = 40;
-    this.x = 50;
-    this.y = 10;
+    constructor(x,y,r,g,b){
+    this.w = width/13;
+    this.h = this.w/4;
+    this.x = x;
+    this.y = y;
     this.active = true;   
+
+    this.r = 100;
+
+    this.r = r
+    this.g = g
+    this.b = b
+
     }
   
     show(){
-        fill(255);
+        
+        fill(this.r,this.g,this.b)
         if(this.active == true){
         rect(this.x,this.y,this.w,this.h);
     
         }
-        }
+    }
 
     collision(b){
 

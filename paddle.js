@@ -16,6 +16,7 @@ class Paddle {
         */
     }
     collision(b){
+        /*
         var ballLeft = b.x - b.r;
         var ballRight = b.x + b.r;
         var ballTop = b.y - b.r;
@@ -28,9 +29,48 @@ class Paddle {
                 b.vy = -b.vy
 
         }
+        */
+       if (b.x + b.r > this.x &&
+            b.x - b.r < this.x + this.w &&
+            b.y + b.r > this.y) {
+          // Collision detected, change ball direction
+          b.vy = -b.vy ;
     
 
+            }
+        
+              
+    /* 
+       
+        if(!(ballLeft > this.x
+            ||ballRight < this.x
+            ||ballTop > this.y + this.h
+            ||ballBottom < this.y)){
+                b.vx = -b.vx;
+             
+                
+        }
+        if(!(ballLeft > this.x + this.w
+            ||ballRight < this.x + this.w
+            ||ballTop > this.y + this.h
+            ||ballBottom < this.y)){
+                b.vx = -b.vx;
+       
+            
+        }
+
+        if(!(ballLeft > this.x + this.w
+            ||ballRight < this.x 
+            ||ballTop > this.y + this.h 
+            ||ballBottom < this.y + this.h)){
+                b.vy = -b.vy;
+              
+     
+        }
+        */
     }
+}
+
+
     
 
-}

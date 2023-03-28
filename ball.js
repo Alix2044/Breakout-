@@ -4,8 +4,11 @@ class Ball{
     this.x = width/2;
     this.y = height/2;
     this.r = 15;
-    this.vy = random(-10, 10);
-    this.vx = random(-10, 10);
+    this.start = -7;
+    this.slut = 7;
+    this.vy = random(this.start,this.slut);
+    this.vx = random(this.start,this.slut);
+    this.c = (random(255),random(255),random(255))
     }
  
     
