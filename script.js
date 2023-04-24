@@ -7,6 +7,9 @@ var ball;
 var paddle;
 var brick;
 
+var brick1;
+var ball1;
+
 var bricki;
 
 var score = 0;
@@ -19,12 +22,22 @@ function setup(){
     width = 800;
     height = 400;
     createCanvas(width, height);
+    frameRate(60);
     
     ball = new Ball();
     paddle = new Paddle();
     brick = new Brick();
-    bricki = new Bricki(200,300,10,255,20);
-    
+
+    ball1 = new Ball1();
+
+brick1 = new Brick1();
+ 
+  
+    let button = createButton("reset sketch");
+  button.mousePressed(resetGame());
+
+  
+  
 
 
  for(let j = 0; j<7;j++){
@@ -35,7 +48,8 @@ function setup(){
  }
 
 
-
+ 
+ 
   /*for(let i = 0; i<brickArray.length;i++){
 
       
@@ -46,18 +60,17 @@ function setup(){
     
    */
 
+}
   
-  }
   
   function draw(){
 
-    background(0);
-    fill(255,0,0,100);
-    textSize(255);
-    text(score,width/2-110,height-70)
+      background(0);
+      fill(255,0,0,100);
+      textSize(255);
+      text(score,width/2-110,height-70)
    
-    bricki.show()
-    bricki.collision(ball)
+   
 
    // ball.show()
    // ball.move()
@@ -68,7 +81,7 @@ function setup(){
 
         brickArray[i].collision(ball);
   
-        if(!brickArray[i].active == true){
+        if(!(brickArray[i].active == true)){
           console.log(score)
           score ++;
         }
@@ -82,15 +95,18 @@ function setup(){
   if(play == true){
        ball.show();
      ball.move();
+
       paddle.show();
      paddle.collision(ball);
        paddle.x = mouseX;
 
 
+
+
      
 
 
-     brick.show();
+    // brick.show();
      
   /*  if(brick.active == true){
 
@@ -107,21 +123,34 @@ function setup(){
     
        if(paddle.x < 0){ paddle.x = 0}
        if(paddle.x+ paddle.w >= width){paddle.x = width-paddle.w}
-       if(ball.y - ball.r > height){play = false}
+       if(ball.y -  ball.r >= height){play = false}
  
      }
      else 
      {
- 
-       textSize(20);
-       text("GAME OVER!!!",width/2-75,height/2);
-       ball.reset();
+ resetGame();
+      
  
      }
      
  
     
-
+   
     
 
   }
+
+  function storeData(){
+    storeItem("highScore", score)
+  }
+  
+
+
+function resetGame() {
+
+  textSize(20);
+  text("GAME OVER!!!",width/2-75,height/2);
+  ball.reset();
+ball.reset();
+
+}

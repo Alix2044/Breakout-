@@ -40,7 +40,7 @@ class Brick{
                 ||ballBottom < this.y + this.h)){
                     b.vy = -b.vy;
                     this.active = false;   
-                    console.log("1");
+                  
 
             }
             if(!(ballLeft > this.x + this.w
@@ -51,7 +51,7 @@ class Brick{
                   this.score+=1;
                     return   this.active = false;  
             }
-            if(!(ballLeft > this.x
+           if(!(ballLeft > this.x
                 ||ballRight < this.x
                 ||ballTop > this.y + this.h
                 ||ballBottom < this.y)){
@@ -66,7 +66,7 @@ class Brick{
                 ||ballBottom < this.y)){
                     b.vx = -b.vx;
                   return this.active = false;  
-                score+=1;
+           
             }
 
         }

@@ -6,8 +6,9 @@ class Ball{
     this.r = 15;
     this.start = -7;
     this.slut = 7;
-    this.vy = random(this.start,this.slut);
-    this.vx = random(this.start,this.slut);
+   this.vy = 2.8 + random(0,2)
+   this.vx = 4.9 + random(0,0.5)
+  
     this.c = (random(255),random(255),random(255))
     }
  
@@ -16,6 +17,7 @@ class Ball{
     move(){
         this.x += this.vx;
         this.y += this.vy;
+       
 
     if(this.y<0){
             this.vy = -this.vy;
