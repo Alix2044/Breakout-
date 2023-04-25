@@ -34,7 +34,7 @@ class Paddle {
         
               
     
-   /*    
+      
         if(!(ballLeft > this.x
             ||ballRight < this.x
             ||ballTop > this.y + this.h
@@ -43,7 +43,7 @@ class Paddle {
              
                 
         }
-        */
+       
         if(!(ballLeft > this.x + this.w
             ||ballRight < this.x + this.w
             ||ballTop > this.y + this.h
@@ -52,7 +52,7 @@ class Paddle {
        
             
         }
-/*
+
         if(!(ballLeft > this.x + this.w
             ||ballRight < this.x 
             ||ballTop > this.y + this.h 
@@ -61,9 +61,11 @@ class Paddle {
               
      
         }
-        */
+        
         
     }
+
+  
 }
 
 
